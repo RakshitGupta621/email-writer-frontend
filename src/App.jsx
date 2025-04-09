@@ -14,7 +14,7 @@ const App = () => {
     setLoading(true);
     setError('');
     try {
-      const { data } = await axios.post("http://localhost:8080/api/email/generate", { emailContent, tone });
+      const { data } = await axios.post("https://email-writer-backend.up.railway.app/api/email/generate", { emailContent, tone });
       setGeneratedReply(typeof data === 'string' ? data : JSON.stringify(data));
     } catch (err) {
       setError('Failed to generate email reply. Please try again');
